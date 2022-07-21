@@ -48,9 +48,10 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
 
 });
 
-app.delete('/api/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, 'db/db.json'))
-);
+
+app.delete('/api/notes/:id', (req, res) => {
+    const readNotes = JSON.parse(data);
+});
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
