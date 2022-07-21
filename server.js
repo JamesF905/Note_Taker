@@ -5,8 +5,9 @@ const db_data = require('./db/db.json');
 const path = require('path');
 
 const app = express();
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 
+app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) =>
@@ -42,6 +43,7 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
     fs.writeFile('./db/db.json', JSON.stringify(readNotes, null, 2), (err) =>
         err ? console.error(err) : console.info('Notes Updated!')
     );
+    res.sendFile(path.join(__dirname, 'public/notes.html'))
 })
 
 });
