@@ -1,14 +1,14 @@
 const express = require('express');
 const fs = require('fs');
-const db_data = require('./db/db.json');
-
 const path = require('path');
+const noteId = require('uniqid');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(express.static('public'));
+
 
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/index.html'))
@@ -25,9 +25,9 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) =>{
 // grab the new title and text from the request body
-const { title, text } = req.body;
+const { title, text} = req.body;
 // make a new object with the new title and text
-newNote = { title, text };
+const newNote = { title, text, id: noteId()};
 
 /*
 fs.appendFile('./db/db.json', newNote, (err) =>
