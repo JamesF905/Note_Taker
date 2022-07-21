@@ -15,7 +15,7 @@
 ### Heroku Link
 
 <p align="center">
-    <a href=""><strong></strong></a>
+    <a href="https://tranquil-escarpment-40657.herokuapp.com/"><strong>https://tranquil-escarpment-40657.herokuapp.com/</strong></a>
 </p>
 
 ### Repo Link
@@ -37,7 +37,6 @@ This challenge requires me to use express npm and Heroku to serve up a Note taki
 * [User Story](#User-Story)
 * [Acceptance Criteria](#Acceptance-Criteria)
 * [Technology Used](#Technology-Used)
-* [Installation](#Installation-Instructions)
 * [About the Author](#About-the-Author)
 <br/><br/>
 
@@ -81,28 +80,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 * [Git Bash](https://git-scm.com/)
 * [node.js](https://nodejs.org/en/)
 * [node.js fs module](https://nodejs.dev/learn/the-nodejs-fs-module)
-* [npm inquirer](https://www.npmjs.com/package/inquirer)
 * [express.js](https://expressjs.com/)
 * [Heroku](https://www.heroku.com/)
-
-<p align="center"><a href="#contents">(back to top)</a></p>
-<br/><br/>
-
-## Installation Instructions 
-
-1) Install GitBash
-
-2) Install Node.js
-
-3) Clone this repo
-
-4) Run GitBash from your cloned folder
-
-5) type "npm i" in GitBash
-
-6) type "node index.js" in GitBash to start the application and fill out the form, an index.html file will be generated and stored in the "dist/" folder
-
-7) type "npm run test" to run the jest test suites
 
 <p align="center"><a href="#contents">(back to top)</a></p>
 <br/><br/>
