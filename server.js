@@ -21,18 +21,12 @@ app.get('/notes', (req, res) =>
 app.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/db/db.json'));
 });
-//app.get('/api/notes', (req, res) => res.json([db_data]));
 
 app.post('/api/notes', (req, res) =>{
 // grab the new title and text from the request body
 const { title, text} = req.body;
 // make a new object with the new title and text
 const newNote = { title, text, id: noteId()};
-
-/*
-fs.appendFile('./db/db.json', newNote, (err) =>
-  err ? console.error(err) : console.log('Notes Updated!')
-);*/
 
 fs.readFile('./db/db.json', 'utf8', (err, data) => {
     // read the db/db.json file and set it as a variable
@@ -50,9 +44,20 @@ fs.readFile('./db/db.json', 'utf8', (err, data) => {
 
 
 app.delete('/api/notes/:id', (req, res) => {
-    const readNotes = JSON.parse(data);
+    
+    fs.readFile('../db/db.json', 'utf8', (err, data) => {
+        if(err){
+            console.error(err);
+        }else{
+            const note_list = JSON.parse(data);
+            for(i=0;i<note_list;i++){
+
+            }
+        }
+    });
+    
 });
 
 app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
+  console.log(`Server is listening at http://localhost:${PORT}`)
 );
